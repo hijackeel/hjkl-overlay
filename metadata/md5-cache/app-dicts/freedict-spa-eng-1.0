@@ -1,0 +1,12 @@
+DEFINED_PHASES=install
+DESCRIPTION=Freedict Spanish-to-English dictionary.
+EAPI=7
+HOMEPAGE=freedict.org
+INHERIT=freedict
+KEYWORDS=~amd64
+LICENSE=GPL-2+
+RDEPEND=app-text/dictd
+SLOT=0
+SRC_URI=http://freedict.sourceforge.net/download/linux/spa-eng.tar.gz
+_eclasses_=freedict	4288b653e11faaf1d9b11e698387f468
+_md5_=44eafe896b8640dfc88483c32629cf72
