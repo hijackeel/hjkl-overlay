@@ -8,7 +8,7 @@ inherit desktop git-r3 qmake-utils plocale
 
 DESCRIPTION="Feature-rich dictionary lookup program"
 HOMEPAGE="http://goldendict.org/"
-EGIT_REPO_URI="https://github.com/vedgy/${PN}.git"
+EGIT_REPO_URI="https://github.com/goldendict/${PN}.git"
 EGIT_SUBMODULES=()
 
 LICENSE="GPL-3"
@@ -49,6 +49,7 @@ BDEPEND="
 
 PATCHES=(
 	"${FILESDIR}/${PN}-fix-all-plocale.patch"
+	"${FILESDIR}/${PN}-webkit-or-webengine.patch"
 )
 
 src_prepare() {
@@ -73,6 +74,8 @@ src_prepare() {
 		sed -i "/${1}.ts/d" ${PN}.pro || die
 	}
 	plocale_for_each_disabled_locale rm_loc
+
+	cp "${FILESDIR}/loading.gif" "${S}/icons/loading.gif"
 }
 
 src_configure() {
